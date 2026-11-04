@@ -3,6 +3,7 @@ import cors from "cors"
 import dotenv from "dotenv"
 import express from "express"
 import connectDB from "./src/config/db.js"
+import keepAlive from "./src/config/keepAlive.js"
 import authRouter from "./src/routes/auth.route.js"
 import documentRouter from "./src/routes/document.route.js"
 
@@ -46,4 +47,5 @@ const port = process.env.PORT || 8000
 
 app.listen(port, () => {
     console.log(`Server listening on port: ${port}`)
+    keepAlive()
 })
